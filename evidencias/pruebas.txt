@@ -1,0 +1,63 @@
+=== EJERCICIO 1: Auditoría de solicitudes ===
+Caso normal - lista completa con duplicados, canceladas y prioridades mezcladas:
+[102, 20241002, cancelacion, alta, 2026-06-01, activa]
+[105, 20241005, validacion, alta, 2026-06-03, activa]
+[101, 20241001, homologacion, media, 2026-06-01, activa]
+[104, 20241004, reingreso, baja, 2026-06-02, activa]
+
+Caso limite - lista con un solo elemento:
+[200, 20241010, reingreso, alta, 2026-06-03, activa]
+
+Caso de error potencial - lista vacia:
+Lista vacia: no hay solicitudes para procesar
+
+=== EJERCICIO 2: Validador de trazas ===
+Caso normal - traza valida completa:
+Valida
+
+Caso limite - responder una pregunta que no esta activa:
+Invalida: se intento responder la pregunta 2 pero el contexto activo es la pregunta 1
+
+Caso de error potencial - VOLVER sin nada en la pila:
+Invalida: se ejecuto VOLVER sin ninguna pregunta abierta en el contexto
+
+Caso de error potencial - ENVIAR con preguntas aun abiertas:
+Invalida: se intento enviar con preguntas aun abiertas en el contexto: [1]
+
+=== EJERCICIO 3: Recursividad sobre árbol académico ===
+Caso normal - estructura completa del arbol:
+Programa
+  Estructuras de Datos
+    Unidad 1
+      Actividad: Listas
+      Quiz 1
+    Unidad 2
+      Actividad: Pilas y Colas
+  Algoritmos
+    Unidad 1
+      Actividad: Recursividad
+
+Total de actividades: 3
+Profundidad maxima: 4
+Buscar 'Quiz 1': True
+Buscar 'Examen Final': False
+
+Caso limite - arbol de un solo nodo:
+Actividades: 1
+Profundidad: 1
+
+Caso de error potencial - nodo sin hijos que no es actividad:
+Actividades: 0
+
+=== EJERCICIO 4: Backtracking para asignación de salas ===
+Caso normal - asignacion posible con restricciones:
+Asignacion encontrada:
+  Evaluacion EDA en sala A101 a las 18:00-20:00
+  Evaluacion BD en sala A102 a las 18:00-20:00
+  Evaluacion CALC en sala B201 a las 20:00-22:00
+
+Caso limite - una sola evaluacion y una sola sala valida:
+Resultado: [{'evaluacion': 'MAT', 'sala': 'C101', 'horario': '08:00-10:00'}]
+
+Caso sin solucion - evaluacion requiere computador pero ninguna sala disponible lo tiene:
+Resultado: No hay solucion valida para esta configuracion
